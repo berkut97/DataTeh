@@ -1,6 +1,10 @@
 package ru.datateh.models;
 
+import ru.datateh.utils.Criterias;
+
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Person {
     /**
@@ -22,11 +26,15 @@ public class Person {
     /**
      * Желаюмая кандидатом должность
      */
-    private String WPost;
+    private String expectedPost;
     /**
      * Подходящая кандидату должность
      */
-    private String Post;
+    private String suitablePost;
+    /**
+     * Карта критериев
+     */
+    Map<Criterias, Integer> criterias;
 
     public String getFirstName() {
         return  firstName;
@@ -61,18 +69,26 @@ public class Person {
     }
 
     public String getWPost() {
-        return  WPost;
+        return  expectedPost;
     }
 
-    public void setWPost(String wPost) {
-        this.WPost = wPost;
+    public void setWPost(String ExpectedPost) {
+        this.expectedPost = ExpectedPost;
     }
 
     public String getPost() {
-        return  Post;
+        return  suitablePost;
     }
 
-    public void setPost(String post) {
-        this.Post = post;
+    public void setPost(String SuitablePost) {
+        this.suitablePost = SuitablePost;
+    }
+
+    public Map<Criterias, Integer> getCriterias() {
+        return criterias;
+    }
+
+    public void setCriterias(Map<Criterias, Integer> criterias) {
+        this.criterias = criterias;
     }
 }
